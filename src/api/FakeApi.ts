@@ -1,5 +1,5 @@
+import { IActivityRecord, IUser } from '@/types/user'
 import { faker } from '@faker-js/faker'
-import { IActivityRecord, IUser } from '../types/user'
 
 const actions = [
     { type: 'Update password', color: 'red' },

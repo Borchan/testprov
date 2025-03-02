@@ -1,14 +1,15 @@
 import { makeAutoObservable } from 'mobx'
-import { IUser, TFilter, TSortField, TSortOrder } from '../types/user'
-import { fakeUsers } from '../api/FakeApi'
+import { fakeUsers } from '@api/FakeApi'
+import { IUser, TSortField } from '@/types/user'
+import { FilterValue, SortOrder } from 'antd/es/table/interface'
 
 class UserStore {
     users: IUser[] = []
     error: boolean = false
     loading: boolean = false
     sortField: TSortField = null
-    sortOrder: TSortOrder = null
-    filters: TFilter = null
+    sortOrder: SortOrder = null
+    filters: FilterValue | null = null
     selectedUser: IUser | null = null
 
     constructor() {
@@ -26,11 +27,12 @@ class UserStore {
             this.loading = false
         }
     }
-    setSort(field: TSortField, order: TSortOrder) {
+    setSort(field: TSortField, order: SortOrder) {
         this.sortField = field
         this.sortOrder = order
     }
-    setFilter(filters: TFilter) {
+
+    setFilter(filters: FilterValue | null) {
         this.filters = filters
     }
     setSelectedUser(user: IUser | null) {

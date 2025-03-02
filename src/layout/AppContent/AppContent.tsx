@@ -1,25 +1,15 @@
 import { Content } from 'antd/es/layout/layout'
-import UsersTable from '../components/UsersTable'
-import UserModal from '../components/UserModal'
+import { UsersTable } from '@components/UsersTable'
 import { observer } from 'mobx-react-lite'
-import { userStore } from '../store/UserStore'
+import { userStore } from '@store/userStore'
 import { Alert } from 'antd'
+import { UserModal } from '@components/UserModal/'
+import s from './appContent.module.css'
 
 export const AppContent = observer(() => {
     return (
-        <Content
-            style={{
-                padding: '48px',
-            }}
-        >
-            <div
-                style={{
-                    background: '#ffffff',
-                    minHeight: 280,
-                    padding: 24,
-                    borderRadius: 10,
-                }}
-            >
+        <Content className={s.content}>
+            <section className={s.section}>
                 {userStore.error ? (
                     <Alert
                         message="Error"
@@ -32,7 +22,7 @@ export const AppContent = observer(() => {
                 )}
 
                 <UserModal />
-            </div>
+            </section>
         </Content>
     )
 })

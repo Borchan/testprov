@@ -1,8 +1,9 @@
 import { Descriptions, Modal, Timeline } from 'antd'
 import { observer } from 'mobx-react-lite'
-import { userStore } from '../../store/UserStore'
+import { userStore } from '@store/userStore'
+import s from './userModal.module.css'
 
-const UserModal: React.FC = observer(() => {
+export const UserModal: React.FC = observer(() => {
     const handleClose = () => {
         userStore.setSelectedUser(null)
     }
@@ -35,7 +36,7 @@ const UserModal: React.FC = observer(() => {
                 </Descriptions.Item>
             </Descriptions>
             <Timeline
-                style={{ marginTop: 20 }}
+                className={s.timeline}
                 items={userStore.selectedUser.activityHistory.map(
                     (activity) => ({
                         children: activity.action.type,
@@ -46,5 +47,3 @@ const UserModal: React.FC = observer(() => {
         </Modal>
     )
 })
-
-export default UserModal

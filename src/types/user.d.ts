@@ -16,6 +16,4 @@ export interface IActivityRecord {
     action: TAction
 }
 
-export type TSortField = 'name' | 'email' | null
-export type TSortOrder = 'ascend' | 'descend' | null
-export type TFilter = boolean[] | null
+export type TSortField = keyof IUser | null

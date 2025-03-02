@@ -1,16 +1,8 @@
 import { Footer } from 'antd/es/layout/layout'
-const footerStyle = {
-    textAlign: 'center',
-
-    color: '#fff',
-    height: 64,
-    paddingInline: 48,
-
-    backgroundColor: '#4096ff',
-}
+import s from './appFooter.module.css'
 export const AppFooter = () => {
     return (
-        <Footer style={footerStyle}>
+        <Footer className={s.footer}>
             Provitech {new Date().getFullYear()} Test Task
         </Footer>
     )

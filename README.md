@@ -82,21 +82,16 @@ src/
 │   └── FakeApi.ts        # Генерация тестовых данных
 ├── components/           # React-компоненты
 │   ├── UserModal/        # Компонент модального окна
-│   │   ├── index.tsx     # Точка входа
-│   │   └── UserModal.tsx # Модальное окно с информацией
 │   └── UserTable/        # Компонент таблицы пользователей
-│       ├── index.tsx     # Точка входа
-│       └── UserTable.tsx # Таблица пользователей
 ├── layout/               # слои
-│   ├── AppContent.tsx    # Основной контент
-│   ├── AppFooter.tsx     # Футер
-│   ├── AppHeader.tsx     # Хэдер
-│   └── AppLayout.tsx     # Главный слой
+│   ├── AppContent/       # Основной контент
+│   ├── AppFooter/        # Футер
+│   ├── AppHeader/        # Хэдер
+│   └── AppLayout/        # Главный слой
 ├── store/                # MobX хранилища
 │   └── UserStore.ts      # Хранилище данных пользователей
 ├── types/                # TypeScript типы
 │   └── user.d.ts         # Типы для пользователей
-├── App.tsx               # Главный компонент
 └── main.tsx              # Точка входа
 ```
 
